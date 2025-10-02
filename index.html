@@ -99,6 +99,11 @@
             to { transform: rotate(360deg); }
         }
 
+        @keyframes photoFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
         .flower-1 { top: -20px; left: -20px; }
         .flower-2 { top: -20px; right: -20px; }
         .flower-3 { bottom: -20px; left: -20px; }
@@ -292,6 +297,45 @@
             font-size: 1.1em;
         }
 
+        /* Modal da foto */
+        .photo-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .photo-modal img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(240, 147, 251, 0.6);
+        }
+
+        .close-photo {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            background: rgba(118, 75, 162, 0.8);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+        }
+
         @media (max-width: 600px) {
             .container {
                 margin: 20px;
@@ -306,6 +350,8 @@
                 font-size: 3em;
             }
         }
+
+        
     </style>
 </head>
 <body>
@@ -322,6 +368,12 @@
         <div class="flower flower-2">🌺</div>
         <div class="flower flower-3">🌻</div>
         <div class="flower flower-4">🌷</div>
+
+        <div style="text-align: center; margin-bottom: 30px;">
+            <div style="width: 200px; height: 200px; margin: 0 auto 20px; border-radius: 50%; overflow: hidden; border: 5px solid #f093fb; box-shadow: 0 10px 30px rgba(240, 147, 251, 0.4); animation: photoFloat 3s ease-in-out infinite;">
+                <img id="heloisaPhoto" src="" alt="Heloísa" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;" onclick="openPhotoModal()">
+            </div>
+        </div>
 
         <div style="text-align: center; color: #764ba2; font-size: 1.4em; margin-bottom: 20px; font-style: italic;">
             ✨ Minha princesa está completando ✨
@@ -362,6 +414,10 @@
 
         <button class="btn-confirm" onclick="openModal()">
             🦋 Confirmar Presença 🦋
+        </button>
+
+        <button class="btn-confirm" onclick="addToGoogleCalendar()" style="background: linear-gradient(135deg, #ea4335 0%, #fbbc04 100%); margin-top: 15px;">
+            📅 Adicionar no Google Agenda 📅
         </button>
         
         <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #f093fb;">
@@ -415,7 +471,29 @@
         </div>
     </div>
 
+    <!-- Modal da Foto -->
+    <div class="photo-modal" id="photoModal" onclick="closePhotoModal()">
+        <button class="close-photo" onclick="closePhotoModal()">&times;</button>
+        <img id="photoModalImg" src="" alt="Heloísa">
+    </div>
+
     <script>
+        // Carregar a foto da Heloísa
+        // Você pode substituir por uma URL online ou fazer upload da imagem
+        // Opções para adicionar a foto:
+        // 1. Hospedar no ImgBB (https://imgbb.com/) - gratuito
+        // 2. Hospedar no Imgur (https://imgur.com/)
+        // 3. Usar Google Drive (tornar público e pegar link direto)
+        // 4. Converter a imagem para Base64 e colar aqui
+        
+        // Por enquanto, coloque a URL da foto aqui:
+        const photoUrl = './image/Heloisa.png'; // Cole a foto em base64 aqui OU substitua por URL
+        
+        // Se preferir, você pode converter a foto para base64 em: https://base64.guru/converter/encode/image
+        // Depois cole o resultado completo na variável photoUrl acima
+        
+        document.getElementById('heloisaPhoto').src = photoUrl;
+        document.getElementById('photoModalImg').src = photoUrl;
         // Efeito de brilho ao mover o mouse
         document.addEventListener('mousemove', function(e) {
             if (Math.random() > 0.8) {
@@ -522,6 +600,28 @@
                 document.getElementById('confirmForm').style.display = 'block';
             }, 3000);
         });
+
+        // Função para adicionar ao Google Agenda
+        function addToGoogleCalendar() {
+            const eventTitle = 'Aniversário Heloísa - 2 Anos 🎂';
+            const eventDetails = 'Festa de aniversário da Heloísa - Tema: Jardim Encantado 🦋🌺';
+            const eventLocation = 'Rua Antônio Bauschert, nº 81';
+            const startDate = '20251214T133000'; // 14/12/2025 às 13:30
+            const endDate = '20251214T183000'; // Até 18:30 (5 horas de festa)
+            
+            const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(eventLocation)}&dates=${startDate}/${endDate}`;
+            
+            window.open(googleCalendarUrl, '_blank');
+        }
+
+        // Funções do modal da foto
+        function openPhotoModal() {
+            document.getElementById('photoModal').style.display = 'flex';
+        }
+
+        function closePhotoModal() {
+            document.getElementById('photoModal').style.display = 'none';
+        }
     </script>
 </body>
 </html>
