@@ -1,300 +1,628 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Convite - Heloísa 2 Anos 🦋</title>
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{
-      font-family:'Georgia',serif;
-      background:linear-gradient(135deg,#667eea 0%,#764ba2 50%,#f093fb 100%);
-      min-height:100vh;overflow-x:hidden;position:relative
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite - Heloísa 2 Anos 🦋</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* brilhinhos do mouse */
-    .sparkle{position:fixed;width:10px;height:10px;background:radial-gradient(circle,#fff,transparent);
-      border-radius:50%;pointer-events:none;animation:sparkleAnim 1s ease-out forwards;z-index:9999}
-    @keyframes sparkleAnim{0%{transform:scale(0) rotate(0);opacity:1}100%{transform:scale(3) rotate(180deg);opacity:0}}
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
 
-    /* borboletas */
-    .butterfly{position:fixed;font-size:30px;animation:fly 15s infinite;z-index:100;
-      filter:drop-shadow(0 0 5px rgba(255,255,255,.5))}
-    @keyframes fly{
-      0%{transform:translate(0,0) rotate(0)}
-      25%{transform:translate(200px,-100px) rotate(90deg)}
-      50%{transform:translate(400px,50px) rotate(180deg)}
-      75%{transform:translate(200px,200px) rotate(270deg)}
-      100%{transform:translate(0,0) rotate(360deg)}
-    }
+        /* Efeito de brilho ao mover o mouse */
+        .sparkle {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, #fff, transparent);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkleAnim 1s ease-out forwards;
+            z-index: 9999;
+        }
 
-    /* container */
-    .container{
-      max-width:600px;margin:50px auto;background:rgba(255,255,255,.95);
-      border-radius:30px;padding:40px;box-shadow:0 20px 60px rgba(0,0,0,.3);
-      position:relative;animation:fadeIn 1s ease-in
-    }
-    @keyframes fadeIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes sparkleAnim {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(3) rotate(180deg);
+                opacity: 0;
+            }
+        }
 
-    /* flores decorativas */
-    .flower{position:absolute;font-size:40px;opacity:.3;animation:rotate 10s infinite linear}
-    @keyframes rotate{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-    .flower-1{top:-20px;left:-20px}.flower-2{top:-20px;right:-20px}
-    .flower-3{bottom:-20px;left:-20px}.flower-4{bottom:-20px;right:-20px}
+        /* Borboletas animadas */
+        .butterfly {
+            position: fixed;
+            font-size: 30px;
+            animation: fly 15s infinite;
+            z-index: 100;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
+        }
 
-    @keyframes photoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+        @keyframes fly {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(200px, -100px) rotate(90deg);
+            }
+            50% {
+                transform: translate(400px, 50px) rotate(180deg);
+            }
+            75% {
+                transform: translate(200px, 200px) rotate(270deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
 
-    h1{text-align:center;color:#764ba2;font-size:2.5em;margin-bottom:10px;text-shadow:2px 2px 4px rgba(0,0,0,.1)}
-    .subtitle{text-align:center;color:#667eea;font-size:1.5em;margin-bottom:30px;font-style:italic}
-    .age-highlight{text-align:center;font-size:4em;color:#f093fb;font-weight:700;margin:20px 0;
-      text-shadow:3px 3px 6px rgba(0,0,0,.2);animation:bounce 2s infinite}
-    @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+        /* Container principal */
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            position: relative;
+            animation: fadeIn 1s ease-in;
+        }
 
-    .info-section{background:linear-gradient(135deg,#ffeef8 0%,#e7e4ff 100%);
-      padding:25px;border-radius:20px;margin:25px 0;border:3px solid #f093fb}
-    .info-item{margin:15px 0;font-size:1.1em;color:#333;display:flex;align-items:center}
-    .info-item strong{color:#764ba2;margin-right:10px;min-width:100px}
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    .btn-confirm{
-      background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;border:none;
-      padding:18px 40px;font-size:1.3em;border-radius:50px;cursor:pointer;width:100%;margin-top:30px;
-      font-weight:700;box-shadow:0 8px 20px rgba(118,75,162,.4);transition:all .3s ease;text-transform:uppercase
-    }
-    .btn-confirm:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(118,75,162,.6)}
+        /* Flores decorativas */
+        .flower {
+            position: absolute;
+            font-size: 40px;
+            opacity: 0.3;
+            animation: rotate 10s infinite linear;
+        }
 
-    /* modal confirmação */
-    .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1000;
-      justify-content:center;align-items:center;animation:fadeIn .3s ease}
-    .modal-content{background:#fff;padding:40px;border-radius:20px;max-width:500px;width:90%;
-      max-height:90vh;overflow-y:auto;position:relative}
-    .close-modal{position:absolute;top:15px;right:20px;font-size:30px;cursor:pointer;color:#764ba2;border:none;background:none}
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
 
-    .form-group{margin:20px 0}
-    .form-group label{display:block;margin-bottom:8px;color:#764ba2;font-weight:700;font-size:1.1em}
-    .form-group input,.form-group select{width:100%;padding:12px;border:2px solid #e7e4ff;border-radius:10px;font-size:1em;transition:border .3s ease}
-    .form-group input:focus,.form-group select:focus{outline:none;border-color:#764ba2}
-    .checkbox-group{display:flex;align-items:center;margin:20px 0}
-    .checkbox-group input{width:auto;margin-right:10px}
-    .extra-guest{background:#ffeef8;padding:20px;border-radius:10px;margin-top:15px;display:none}
-    .btn-submit{background:linear-gradient(135deg,#11998e 0%,#38ef7d 100%);color:#fff;border:none;
-      padding:15px 30px;font-size:1.2em;border-radius:50px;cursor:pointer;width:100%;margin-top:20px;font-weight:700;transition:all .3s ease}
-    .btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(17,153,142,.4)}
-    .success-message{display:none;background:#d4edda;color:#155724;padding:20px;border-radius:10px;margin-top:20px;text-align:center;font-size:1.1em}
+        @keyframes photoFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
 
-    /* === FOTO NO TOPO: moldura redonda rosa + glow + flutuação === */
-    .top-photo{display:flex;justify-content:center;margin-bottom:30px}
-    .photo-frame{
-      width:200px;height:200px;border-radius:50%;overflow:hidden;cursor:pointer;position:relative;
-      border:5px solid #f093fb;
-      box-shadow:0 0 0 6px rgba(240,147,251,.15), 0 12px 24px rgba(240,147,251,.35);
-      animation:photoFloat 3.2s ease-in-out infinite, glowPulse 2.2s ease-in-out infinite;
-    }
-    @keyframes glowPulse{
-      0%,100%{box-shadow:0 0 0 6px rgba(240,147,251,.15),0 12px 24px rgba(240,147,251,.35)}
-      50%{box-shadow:0 0 0 8px rgba(240,147,251,.28),0 18px 36px rgba(240,147,251,.55)}
-    }
-    .photo-frame::after{
-      content:"";position:absolute;inset:-4px;border-radius:50%;
-      background:conic-gradient(from 0deg, rgba(255,255,255,0), rgba(255,255,255,.6), rgba(255,255,255,0));
-      filter:blur(2px);mix-blend-mode:screen;animation:ringSpin 6s linear infinite;pointer-events:none
-    }
-    @keyframes ringSpin{to{transform:rotate(360deg)}}
-    .photo-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease}
-    .photo-frame:hover .photo-img{transform:scale(1.04)}
+        .flower-1 { top: -20px; left: -20px; }
+        .flower-2 { top: -20px; right: -20px; }
+        .flower-3 { bottom: -20px; left: -20px; }
+        .flower-4 { bottom: -20px; right: -20px; }
 
-    /* modal da foto (tela cheia) */
-    .photo-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:2000;justify-content:center;align-items:center}
-    .photo-modal.open{display:flex;animation:fadeIn .25s ease}
-    .photo-modal img{max-width:90%;max-height:90vh;border-radius:15px;box-shadow:0 20px 60px rgba(240,147,251,.6);
-      transform:scale(.97);opacity:0;animation:zoomIn .25s ease forwards}
-    @keyframes zoomIn{to{transform:scale(1);opacity:1}}
-    .close-photo{position:absolute;top:20px;right:30px;font-size:40px;color:#fff;cursor:pointer;
-      background:rgba(118,75,162,.85);width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:none}
+        h1 {
+            text-align: center;
+            color: #764ba2;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
 
-    @media (max-width:600px){
-      .container{margin:20px;padding:25px}
-      h1{font-size:2em}
-      .age-highlight{font-size:3em}
-      .photo-frame{width:180px;height:180px}
-    }
-  </style>
+        .subtitle {
+            text-align: center;
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .age-highlight {
+            text-align: center;
+            font-size: 4em;
+            color: #f093fb;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .info-section {
+            background: linear-gradient(135deg, #ffeef8 0%, #e7e4ff 100%);
+            padding: 25px;
+            border-radius: 20px;
+            margin: 25px 0;
+            border: 3px solid #f093fb;
+        }
+
+        .info-item {
+            margin: 15px 0;
+            font-size: 1.1em;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-item strong {
+            color: #764ba2;
+            margin-right: 10px;
+            min-width: 100px;
+        }
+
+        .btn-confirm {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.3em;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 30px;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(118, 75, 162, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-confirm:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(118, 75, 162, 0.6);
+        }
+
+        /* Modal de confirmação */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #764ba2;
+            border: none;
+            background: none;
+        }
+
+        .form-group {
+            margin: 20px 0;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #764ba2;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e7e4ff;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: border 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #764ba2;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .checkbox-group input {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .extra-guest {
+            background: #ffeef8;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(17, 153, 142, 0.4);
+        }
+
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        /* Modal da foto */
+        .photo-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .photo-modal img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(240, 147, 251, 0.6);
+        }
+
+        .close-photo {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            background: rgba(118, 75, 162, 0.8);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px;
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .age-highlight {
+                font-size: 3em;
+            }
+        }
+
+        
+    </style>
 </head>
 <body>
-  <!-- borboletas -->
-  <div class="butterfly" style="top:10%;left:10%;animation-delay:0s;">🦋</div>
-  <div class="butterfly" style="top:20%;right:15%;animation-delay:2s;">🦋</div>
-  <div class="butterfly" style="top:60%;left:5%;animation-delay:4s;">🦋</div>
-  <div class="butterfly" style="bottom:20%;right:10%;animation-delay:6s;">🦋</div>
-  <div class="butterfly" style="top:40%;left:50%;animation-delay:3s;">🦋</div>
+    <!-- Borboletas -->
+    <div class="butterfly" style="top: 10%; left: 10%; animation-delay: 0s;">🦋</div>
+    <div class="butterfly" style="top: 20%; right: 15%; animation-delay: 2s;">🦋</div>
+    <div class="butterfly" style="top: 60%; left: 5%; animation-delay: 4s;">🦋</div>
+    <div class="butterfly" style="bottom: 20%; right: 10%; animation-delay: 6s;">🦋</div>
+    <div class="butterfly" style="top: 40%; left: 50%; animation-delay: 3s;">🦋</div>
 
-  <div class="container">
-    <!-- flores -->
-    <div class="flower flower-1">🌸</div>
-    <div class="flower flower-2">🌺</div>
-    <div class="flower flower-3">🌻</div>
-    <div class="flower flower-4">🌷</div>
+    <div class="container">
+        <!-- Flores decorativas -->
+        <div class="flower flower-1">🌸</div>
+        <div class="flower flower-2">🌺</div>
+        <div class="flower flower-3">🌻</div>
+        <div class="flower flower-4">🌷</div>
 
-    <!-- FOTO NO TOPO -->
-    <div class="top-photo">
-      <div class="photo-frame" onclick="openPhotoModal()">
-        <img id="heloisaPhoto" class="photo-img" src="" alt="Heloísa sorrindo">
-      </div>
-    </div>
-
-    <div style="text-align:center;color:#764ba2;font-size:1.4em;margin-bottom:20px;font-style:italic;">
-      ✨ Minha princesa está completando ✨
-    </div>
-    <div class="age-highlight">2 Aninhos! 🎂</div>
-    <h1 style="color:#f093fb;font-size:3em;margin:20px 0;">Heloísa</h1>
-
-    <div class="info-section">
-      <div class="info-item"><strong>📅 Quando:</strong><span>Domingo, 14 de Dezembro de 2025</span></div>
-      <div class="info-item"><strong>🕐 Horário:</strong><span>13:30</span></div>
-      <div class="info-item"><strong>📍 Onde:</strong><span>Rua Antônio Bauschert, nº 81</span></div>
-    </div>
-
-    <div style="background:rgba(255,255,255,.7);padding:20px;border-radius:15px;margin:25px 0;border-left:5px solid #764ba2;">
-      <p style="color:#555;font-size:1.1em;font-style:italic;line-height:1.6;margin:0;">
-        "Desde que nasci fui entregue a ti;<br/>desde o ventre materno és o meu Deus."
-      </p>
-      <p style="color:#764ba2;font-weight:700;margin-top:10px;text-align:right;">— Salmos 22:10</p>
-    </div>
-
-    <div style="text-align:center;color:#764ba2;font-size:1.2em;margin:25px 0;">
-      🌺 Venha comemorar este dia mágico com a gente! 🌺
-    </div>
-
-    <button class="btn-confirm" onclick="openModal()">🦋 Confirmar Presença 🦋</button>
-    <button class="btn-confirm" onclick="addToGoogleCalendar()" style="background:linear-gradient(135deg,#ea4335 0%,#fbbc04 100%);margin-top:15px;">
-      📅 Adicionar no Google Agenda 📅
-    </button>
-
-    <div style="text-align:center;margin-top:30px;padding-top:20px;border-top:2px solid #f093fb;">
-      <p style="color:#764ba2;font-size:.9em;font-style:italic;">💜 Criado pelo titio dela 💜</p>
-    </div>
-  </div>
-
-  <!-- MODAL Confirmação -->
-  <div class="modal" id="confirmModal">
-    <div class="modal-content">
-      <button class="close-modal" onclick="closeModal()">&times;</button>
-      <h2 style="color:#764ba2;text-align:center;margin-bottom:30px;">Confirme sua Presença</h2>
-
-      <form id="confirmForm">
-        <div class="form-group"><label>Nome Completo *</label><input type="text" id="guestName" required placeholder="Digite seu nome completo"></div>
-        <div class="form-group"><label>E-mail *</label><input type="email" id="guestEmail" required placeholder="seuemail@exemplo.com"></div>
-        <div class="form-group"><label>WhatsApp (com DDD) *</label><input type="tel" id="guestPhone" required placeholder="(11) 99999-9999"></div>
-
-        <div class="checkbox-group">
-          <input type="checkbox" id="bringGuest" onchange="toggleExtraGuest()">
-          <label for="bringGuest" style="margin-bottom:0;">Vou levar um acompanhante</label>
+        <div style="text-align: center; margin-bottom: 30px;">
+            <div style="width: 200px; height: 200px; margin: 0 auto 20px; border-radius: 50%; overflow: hidden; border: 5px solid #f093fb; box-shadow: 0 10px 30px rgba(240, 147, 251, 0.4); animation: photoFloat 3s ease-in-out infinite;">
+                <img id="heloisaPhoto" src="" alt="Heloísa" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;" onclick="openPhotoModal()">
+            </div>
         </div>
 
-        <div class="extra-guest" id="extraGuestDiv">
-          <h3 style="color:#764ba2;margin-bottom:15px;">Dados do Acompanhante</h3>
-          <div class="form-group"><label>Nome Completo do Acompanhante</label><input type="text" id="extraGuestName" placeholder="Digite o nome completo"></div>
+        <div style="text-align: center; color: #764ba2; font-size: 1.4em; margin-bottom: 20px; font-style: italic;">
+            ✨ Minha princesa está completando ✨
+        </div>
+        
+        <div class="age-highlight">2 Aninhos! 🎂</div>
+        
+        <h1 style="color: #f093fb; font-size: 3em; margin: 20px 0;">Heloísa</h1>
+
+        <div class="info-section">
+            <div class="info-item">
+                <strong>📅 Quando:</strong>
+                <span>Domingo, 14 de Dezembro de 2025</span>
+            </div>
+            <div class="info-item">
+                <strong>🕐 Horário:</strong>
+                <span>13:30</span>
+            </div>
+            <div class="info-item">
+                <strong>📍 Onde:</strong>
+                <span>Rua Antônio Bauschert, nº 81</span>
+            </div>
         </div>
 
-        <button type="submit" class="btn-submit">✨ Confirmar Presença ✨</button>
-      </form>
+        <div style="background: rgba(255,255,255,0.7); padding: 20px; border-radius: 15px; margin: 25px 0; border-left: 5px solid #764ba2;">
+            <p style="color: #555; font-size: 1.1em; font-style: italic; line-height: 1.6; margin: 0;">
+                "Desde que nasci fui entregue a ti;<br>
+                desde o ventre materno és o meu Deus."
+            </p>
+            <p style="color: #764ba2; font-weight: bold; margin-top: 10px; text-align: right;">
+                — Salmos 22:10
+            </p>
+        </div>
 
-      <div class="success-message" id="successMessage">🎉 Presença confirmada com sucesso! Obrigado! 🎉</div>
+        <div style="text-align: center; color: #764ba2; font-size: 1.2em; margin: 25px 0;">
+            🌺 Venha comemorar este dia mágico com a gente! 🌺
+        </div>
+
+        <button class="btn-confirm" onclick="openModal()">
+            🦋 Confirmar Presença 🦋
+        </button>
+
+        <button class="btn-confirm" onclick="addToGoogleCalendar()" style="background: linear-gradient(135deg, #ea4335 0%, #fbbc04 100%); margin-top: 15px;">
+            📅 Adicionar no Google Agenda 📅
+        </button>
+        
+        <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #f093fb;">
+            <p style="color: #764ba2; font-size: 0.9em; font-style: italic;">
+                💜 Criado pelo titio dela 💜
+            </p>
+        </div>
     </div>
-  </div>
 
-  <!-- MODAL da Foto -->
-  <div class="photo-modal" id="photoModal" onclick="closePhotoModal()">
-    <button class="close-photo" onclick="closePhotoModal()">&times;</button>
-    <img id="photoModalImg" src="" alt="Heloísa">
-  </div>
+    <!-- Modal de Confirmação -->
+    <div class="modal" id="confirmModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <h2 style="color: #764ba2; text-align: center; margin-bottom: 30px;">Confirme sua Presença</h2>
+            
+            <form id="confirmForm">
+                <div class="form-group">
+                    <label>Nome Completo *</label>
+                    <input type="text" id="guestName" required placeholder="Digite seu nome completo">
+                </div>
 
-  <script>
-    /* ===== IMAGEM no repositório (raiz) ===== */
-    const photoUrl = './Heloisa.png'; // <- arquivo na raiz do repo
-    document.getElementById('heloisaPhoto').src  = photoUrl;
-    document.getElementById('photoModalImg').src = photoUrl;
+                <div class="form-group">
+                    <label>E-mail *</label>
+                    <input type="email" id="guestEmail" required placeholder="seuemail@exemplo.com">
+                </div>
 
-    /* brilhinhos */
-    document.addEventListener('mousemove', e=>{
-      if(Math.random()>0.8){
-        const s=document.createElement('div');
-        s.className='sparkle'; s.style.left=e.pageX+'px'; s.style.top=e.pageY+'px';
-        s.style.background=`radial-gradient(circle, ${getRandomColor()}, transparent)`;
-        document.body.appendChild(s); setTimeout(()=>s.remove(),1000);
-      }
-    });
-    document.addEventListener('click', e=>{
-      for(let i=0;i<6;i++){
-        setTimeout(()=>{
-          const s=document.createElement('div'); s.className='sparkle';
-          s.style.left=(e.pageX+Math.random()*40-20)+'px';
-          s.style.top=(e.pageY+Math.random()*40-20)+'px';
-          s.style.background=`radial-gradient(circle, ${getRandomColor()}, transparent)`;
-          document.body.appendChild(s); setTimeout(()=>s.remove(),1000);
-        }, i*50);
-      }
-    });
-    function getRandomColor(){const c=['#fff','#f093fb','#667eea','#764ba2','#ffd700','#ff69b4'];return c[Math.floor(Math.random()*c.length)]}
+                <div class="form-group">
+                    <label>WhatsApp (com DDD) *</label>
+                    <input type="tel" id="guestPhone" required placeholder="(11) 99999-9999">
+                </div>
 
-    /* modal presença */
-    function openModal(){document.getElementById('confirmModal').style.display='flex'}
-    function closeModal(){
-      document.getElementById('confirmModal').style.display='none';
-      document.getElementById('confirmForm').reset();
-      document.getElementById('extraGuestDiv').style.display='none';
-      document.getElementById('successMessage').style.display='none';
-    }
-    function toggleExtraGuest(){
-      const checkbox=document.getElementById('bringGuest');
-      document.getElementById('extraGuestDiv').style.display = checkbox.checked ? 'block' : 'none';
-    }
-    document.getElementById('confirmForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      const guestName=document.getElementById('guestName').value;
-      const guestEmail=document.getElementById('guestEmail').value;
-      const guestPhone=document.getElementById('guestPhone').value;
-      const bringGuest=document.getElementById('bringGuest').checked;
-      const extraGuestName=document.getElementById('extraGuestName').value;
+                <div class="checkbox-group">
+                    <input type="checkbox" id="bringGuest" onchange="toggleExtraGuest()">
+                    <label for="bringGuest" style="margin-bottom: 0;">Vou levar um acompanhante</label>
+                </div>
 
-      const recipientEmail='nanaribeiro.2005@gmail.com';
-      let emailBody=`CONFIRMAÇÃO DE PRESENÇA - Aniversário Heloísa%0D%0A%0D%0A`;
-      emailBody+=`Nome: ${guestName}%0D%0A`;
-      emailBody+=`E-mail: ${guestEmail}%0D%0A`;
-      emailBody+=`WhatsApp: ${guestPhone}%0D%0A`;
-      if(bringGuest && extraGuestName){ emailBody+=`%0D%0AAcompanhante: ${extraGuestName}%0D%0A`; }
-      emailBody+=`%0D%0AData: 14/12/2025 às 13:30`;
+                <div class="extra-guest" id="extraGuestDiv">
+                    <h3 style="color: #764ba2; margin-bottom: 15px;">Dados do Acompanhante</h3>
+                    <div class="form-group">
+                        <label>Nome Completo do Acompanhante</label>
+                        <input type="text" id="extraGuestName" placeholder="Digite o nome completo">
+                    </div>
+                </div>
 
-      let whatsappMsg=`🎉 *CONFIRMAÇÃO DE PRESENÇA*%0A%0A`;
-      whatsappMsg+=`Aniversário: *Heloísa - 2 anos*%0A%0A`;
-      whatsappMsg+=`👤 *Confirmado por:* ${guestName}%0A`;
-      whatsappMsg+=`📧 *E-mail:* ${guestEmail}%0A`;
-      whatsappMsg+=`📱 *WhatsApp:* ${guestPhone}%0A`;
-      if(bringGuest && extraGuestName){ whatsappMsg+=`👥 *Acompanhante:* ${extraGuestName}%0A`; }
-      whatsappMsg+=`%0A📅 *Data:* 14/12/2025%0A🕐 *Horário:* 13:30`;
+                <button type="submit" class="btn-submit">✨ Confirmar Presença ✨</button>
+            </form>
 
-      window.open(`mailto:${recipientEmail}?subject=Confirmação - Aniversário Heloísa&body=${emailBody}`,'_blank');
-      const whatsappNumber='5511976715523';
-      window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMsg}`,'_blank');
+            <div class="success-message" id="successMessage">
+                🎉 Presença confirmada com sucesso! Obrigado! 🎉
+            </div>
+        </div>
+    </div>
 
-      document.getElementById('confirmForm').style.display='none';
-      document.getElementById('successMessage').style.display='block';
-      setTimeout(()=>{closeModal();document.getElementById('confirmForm').style.display='block';},3000);
-    });
+    <!-- Modal da Foto -->
+    <div class="photo-modal" id="photoModal" onclick="closePhotoModal()">
+        <button class="close-photo" onclick="closePhotoModal()">&times;</button>
+        <img id="photoModalImg" src="" alt="Heloísa">
+    </div>
 
-    /* Google Calendar */
-    function addToGoogleCalendar(){
-      const title='Aniversário Heloísa - 2 Anos 🎂';
-      const details='Festa de aniversário da Heloísa - Tema: Jardim Encantado 🦋🌺';
-      const location='Rua Antônio Bauschert, nº 81';
-      const start='20251214T133000';
-      const end='20251214T183000';
-      const url=`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}&dates=${start}/${end}`;
-      window.open(url,'_blank');
-    }
+    <script>
+        // Carregar a foto da Heloísa
+        // Você pode substituir por uma URL online ou fazer upload da imagem
+        // Opções para adicionar a foto:
+        // 1. Hospedar no ImgBB (https://imgbb.com/) - gratuito
+        // 2. Hospedar no Imgur (https://imgur.com/)
+        // 3. Usar Google Drive (tornar público e pegar link direto)
+        // 4. Converter a imagem para Base64 e colar aqui
+        
+        // Por enquanto, coloque a URL da foto aqui:
+        const photoUrl = './image/Heloisa.png'; // Cole a foto em base64 aqui OU substitua por URL
+        
+        // Se preferir, você pode converter a foto para base64 em: https://base64.guru/converter/encode/image
+        // Depois cole o resultado completo na variável photoUrl acima
+        
+        document.getElementById('heloisaPhoto').src = photoUrl;
+        document.getElementById('photoModalImg').src = photoUrl;
+        // Efeito de brilho ao mover o mouse
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() > 0.8) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = e.pageX + 'px';
+                sparkle.style.top = e.pageY + 'px';
+                sparkle.style.background = `radial-gradient(circle, ${getRandomColor()}, transparent)`;
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => sparkle.remove(), 1000);
+            }
+        });
 
-    /* modal da foto */
-    function openPhotoModal(){document.getElementById('photoModal').classList.add('open')}
-    function closePhotoModal(){document.getElementById('photoModal').classList.remove('open')}
-  </script>
+        // Efeito de brilho ao clicar
+        document.addEventListener('click', function(e) {
+            for (let i = 0; i < 6; i++) {
+                setTimeout(() => {
+                    const sparkle = document.createElement('div');
+                    sparkle.className = 'sparkle';
+                    sparkle.style.left = (e.pageX + Math.random() * 40 - 20) + 'px';
+                    sparkle.style.top = (e.pageY + Math.random() * 40 - 20) + 'px';
+                    sparkle.style.background = `radial-gradient(circle, ${getRandomColor()}, transparent)`;
+                    document.body.appendChild(sparkle);
+                    
+                    setTimeout(() => sparkle.remove(), 1000);
+                }, i * 50);
+            }
+        });
+
+        function getRandomColor() {
+            const colors = ['#fff', '#f093fb', '#667eea', '#764ba2', '#ffd700', '#ff69b4'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        function openModal() {
+            document.getElementById('confirmModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('confirmModal').style.display = 'none';
+            document.getElementById('confirmForm').reset();
+            document.getElementById('extraGuestDiv').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'none';
+        }
+
+        function toggleExtraGuest() {
+            const checkbox = document.getElementById('bringGuest');
+            const extraDiv = document.getElementById('extraGuestDiv');
+            extraDiv.style.display = checkbox.checked ? 'block' : 'none';
+        }
+
+        document.getElementById('confirmForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const guestName = document.getElementById('guestName').value;
+            const guestEmail = document.getElementById('guestEmail').value;
+            const guestPhone = document.getElementById('guestPhone').value;
+            const bringGuest = document.getElementById('bringGuest').checked;
+            const extraGuestName = document.getElementById('extraGuestName').value;
+
+            // E-mail da sua irmã
+            const recipientEmail = 'nanaribeiro.2005@gmail.com'; // SUBSTITUA pelo e-mail real da sua irmã
+            
+            // Construir mensagem para e-mail
+            let emailBody = `CONFIRMAÇÃO DE PRESENÇA - Aniversário Heloísa%0D%0A%0D%0A`;
+            emailBody += `Nome: ${guestName}%0D%0A`;
+            emailBody += `E-mail: ${guestEmail}%0D%0A`;
+            emailBody += `WhatsApp: ${guestPhone}%0D%0A`;
+            
+            if (bringGuest && extraGuestName) {
+                emailBody += `%0D%0AAcompanhante: ${extraGuestName}%0D%0A`;
+            }
+            
+            emailBody += `%0D%0AData: 14/12/2025 às 13:30`;
+
+            // Construir mensagem para WhatsApp
+            let whatsappMsg = `🎉 *CONFIRMAÇÃO DE PRESENÇA*%0A%0A`;
+            whatsappMsg += `Aniversário: *Heloísa - 2 anos*%0A%0A`;
+            whatsappMsg += `👤 *Confirmado por:* ${guestName}%0A`;
+            whatsappMsg += `📧 *E-mail:* ${guestEmail}%0A`;
+            whatsappMsg += `📱 *WhatsApp:* ${guestPhone}%0A`;
+            
+            if (bringGuest && extraGuestName) {
+                whatsappMsg += `👥 *Acompanhante:* ${extraGuestName}%0A`;
+            }
+            
+            whatsappMsg += `%0A📅 *Data:* 14/12/2025%0A`;
+            whatsappMsg += `🕐 *Horário:* 13:30`;
+
+            // Abrir e-mail com mailto
+            window.open(`mailto:${recipientEmail}?subject=Confirmação - Aniversário Heloísa&body=${emailBody}`, '_blank');
+            
+            // Copiar mensagem do WhatsApp para clipboard (opcional)
+            const whatsappNumber = '5511976715523'; // SUBSTITUA pelo WhatsApp da sua irmã
+            window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMsg}`, '_blank');
+
+            // Mostrar mensagem de sucesso
+            document.getElementById('confirmForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+            
+            setTimeout(() => {
+                closeModal();
+                document.getElementById('confirmForm').style.display = 'block';
+            }, 3000);
+        });
+
+        // Função para adicionar ao Google Agenda
+        function addToGoogleCalendar() {
+            const eventTitle = 'Aniversário Heloísa - 2 Anos 🎂';
+            const eventDetails = 'Festa de aniversário da Heloísa - Tema: Jardim Encantado 🦋🌺';
+            const eventLocation = 'Rua Antônio Bauschert, nº 81';
+            const startDate = '20251214T133000'; // 14/12/2025 às 13:30
+            const endDate = '20251214T183000'; // Até 18:30 (5 horas de festa)
+            
+            const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(eventLocation)}&dates=${startDate}/${endDate}`;
+            
+            window.open(googleCalendarUrl, '_blank');
+        }
+
+        // Funções do modal da foto
+        function openPhotoModal() {
+            document.getElementById('photoModal').style.display = 'flex';
+        }
+
+        function closePhotoModal() {
+            document.getElementById('photoModal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
