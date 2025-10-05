@@ -4,25 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Convite - Heloísa 2 Anos 🦋</title>
-    <!-- Open Graph (WhatsApp/Facebook) -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gm4rtins-ha.github.io/Convitedaminhaprincesa/">
-    <meta property="og:title" content="Convite — Heloísa 2 Anos 🦋">
-    <meta property="og:description" content="Dom, 14/12/2025 às 13:30 — Rua Antônio Bauschert, 81. Clique para confirmar presença.">
-    <meta property="og:image" content="https://gm4rtins-ha.github.io/Convitedaminhaprincesa/Heloisa-share.jpg">
-    <meta property="og:image:secure_url" content="https://gm4rtins-ha.github.io/Convitedaminhaprincesa/Heloisa-share.jpg">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Heloísa sorrindo">
-
-    <!-- Twitter Card (alguns apps usam) -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Convite — Heloísa 2 Anos 🦋">
-    <meta name="twitter:description" content="Dom, 14/12/2025 às 13:30 — Rua Antônio Bauschert, 81.">
-    <meta name="twitter:image" content="https://gm4rtins-ha.github.io/Convitedaminhaprincesa/Heloisa-share.jpg">
-
-
     <style>
         * {
             margin: 0;
@@ -32,17 +13,36 @@
 
         body {
             font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             min-height: 100vh;
-            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
             position: relative;
+            overflow-x: hidden;
+            background-color: #ffeef8;
+        }
+
+        /* Background com a imagem */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/image/Background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
         }
 
         /* Efeito de brilho ao mover o mouse */
         .sparkle {
             position: fixed;
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             background: radial-gradient(circle, #fff, transparent);
             border-radius: 50%;
             pointer-events: none;
@@ -64,142 +64,210 @@
         /* Borboletas animadas */
         .butterfly {
             position: fixed;
-            font-size: 30px;
-            animation: fly 15s infinite;
-            z-index: 100;
-            filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
+            font-size: 35px;
+            animation: fly 20s infinite ease-in-out;
+            z-index: 5;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
         }
 
         @keyframes fly {
-            0% {
+            0%, 100% {
                 transform: translate(0, 0) rotate(0deg);
             }
             25% {
-                transform: translate(200px, -100px) rotate(90deg);
+                transform: translate(250px, -120px) rotate(90deg);
             }
             50% {
-                transform: translate(400px, 50px) rotate(180deg);
+                transform: translate(500px, 80px) rotate(180deg);
             }
             75% {
-                transform: translate(200px, 200px) rotate(270deg);
-            }
-            100% {
-                transform: translate(0, 0) rotate(360deg);
+                transform: translate(250px, 220px) rotate(270deg);
             }
         }
 
-        /* Container principal */
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
+        /* Card principal do convite */
+        .invitation-card {
+            max-width: 420px;
+            width: 100%;
             background: rgba(255, 255, 255, 0.95);
-            border-radius: 30px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border: 5px solid #e89ec3;
+            border-radius: 35px;
+            box-shadow: 0 20px 60px rgba(232, 158, 195, 0.4);
             position: relative;
-            animation: fadeIn 1s ease-in;
+            animation: fadeIn 1.2s ease-in;
+            z-index: 10;
+            overflow: visible;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
+            from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Flores decorativas */
-        .flower {
+        /* Borboleta decorativa no canto */
+        .corner-butterfly {
             position: absolute;
-            font-size: 40px;
-            opacity: 0.3;
-            animation: rotate 10s infinite linear;
+            top: -30px;
+            right: 30px;
+            font-size: 70px;
+            animation: flutter 3s ease-in-out infinite;
+            z-index: 15;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
         }
 
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        @keyframes flutter {
+            0%, 100% { transform: rotate(-10deg); }
+            50% { transform: rotate(10deg); }
         }
 
-        @keyframes photoFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .flower-1 { top: -20px; left: -20px; }
-        .flower-2 { top: -20px; right: -20px; }
-        .flower-3 { bottom: -20px; left: -20px; }
-        .flower-4 { bottom: -20px; right: -20px; }
-
-        h1 {
+        /* Conteúdo do card */
+        .card-content {
+            padding: 50px 35px 40px;
             text-align: center;
-            color: #764ba2;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
-        .subtitle {
-            text-align: center;
-            color: #667eea;
-            font-size: 1.5em;
-            margin-bottom: 30px;
-            font-style: italic;
+        /* Foto da aniversariante */
+        .photo-frame {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            border: 5px solid #e89ec3;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(232, 158, 195, 0.4);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            position: relative;
         }
 
-        .age-highlight {
-            text-align: center;
-            font-size: 4em;
-            color: #f093fb;
-            font-weight: bold;
-            margin: 20px 0;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
-            animation: bounce 2s infinite;
+        .photo-frame:hover {
+            transform: scale(1.08);
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .info-section {
-            background: linear-gradient(135deg, #ffeef8 0%, #e7e4ff 100%);
-            padding: 25px;
-            border-radius: 20px;
+        /* Nome da aniversariante */
+        .name-title {
+            font-size: 3em;
+            color: #e89ec3;
+            font-family: 'Brush Script MT', cursive;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+            font-weight: normal;
+        }
+
+        /* Texto do convite */
+        .invite-text {
+            font-size: 0.95em;
+            color: #666;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Data e hora */
+        .date-section {
             margin: 25px 0;
-            border: 3px solid #f093fb;
         }
 
-        .info-item {
-            margin: 15px 0;
+        .month {
             font-size: 1.1em;
-            color: #333;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .day-time {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        .day-label, .time-label {
+            font-size: 0.9em;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .day-number {
+            font-size: 5em;
+            color: #8b4458;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .time-value {
+            font-size: 0.95em;
+            color: #666;
+        }
+
+        /* Botões de ação */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0 20px;
+        }
+
+        .action-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn-icon {
+            width: 70px;
+            height: 70px;
+            background: #e89ec3;
+            border-radius: 50%;
             display: flex;
             align-items: center;
-        }
-
-        .info-item strong {
-            color: #764ba2;
-            margin-right: 10px;
-            min-width: 100px;
-        }
-
-        .btn-confirm {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            justify-content: center;
+            font-size: 2em;
             color: white;
-            border: none;
-            padding: 18px 40px;
-            font-size: 1.3em;
-            border-radius: 50px;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 30px;
-            font-weight: bold;
-            box-shadow: 0 8px 20px rgba(118, 75, 162, 0.4);
+            box-shadow: 0 6px 20px rgba(232, 158, 195, 0.4);
             transition: all 0.3s ease;
-            text-transform: uppercase;
         }
 
-        .btn-confirm:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(118, 75, 162, 0.6);
+        .action-btn:hover .btn-icon {
+            background: #d685ac;
+            box-shadow: 0 8px 25px rgba(232, 158, 195, 0.6);
+        }
+
+        .btn-label {
+            font-size: 0.75em;
+            color: #666;
+            text-transform: uppercase;
+            text-align: center;
+            max-width: 85px;
+            line-height: 1.2;
+        }
+
+        /* Copyright */
+        .copyright {
+            text-align: center;
+            padding: 15px;
+            color: #999;
+            font-size: 0.85em;
+            font-style: italic;
+            border-top: 1px solid #f0d4e0;
         }
 
         /* Modal de confirmação */
@@ -210,33 +278,43 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.75);
             z-index: 1000;
             justify-content: center;
             align-items: center;
             animation: fadeIn 0.3s ease;
+            padding: 20px;
         }
 
         .modal-content {
             background: white;
             padding: 40px;
-            border-radius: 20px;
+            border-radius: 25px;
             max-width: 500px;
-            width: 90%;
+            width: 100%;
             max-height: 90vh;
             overflow-y: auto;
             position: relative;
+            border: 4px solid #e89ec3;
         }
 
         .close-modal {
             position: absolute;
             top: 15px;
             right: 20px;
-            font-size: 30px;
+            font-size: 32px;
             cursor: pointer;
-            color: #764ba2;
+            color: #e89ec3;
             border: none;
             background: none;
+            font-weight: bold;
+        }
+
+        .modal h2 {
+            color: #e89ec3;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8em;
         }
 
         .form-group {
@@ -246,25 +324,23 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            color: #764ba2;
+            color: #8b4458;
             font-weight: bold;
-            font-size: 1.1em;
+            font-size: 1.05em;
         }
 
-        .form-group input,
-        .form-group select {
+        .form-group input {
             width: 100%;
-            padding: 12px;
-            border: 2px solid #e7e4ff;
-            border-radius: 10px;
+            padding: 14px;
+            border: 2px solid #f0d4e0;
+            border-radius: 12px;
             font-size: 1em;
             transition: border 0.3s ease;
         }
 
-        .form-group input:focus,
-        .form-group select:focus {
+        .form-group input:focus {
             outline: none;
-            border-color: #764ba2;
+            border-color: #e89ec3;
         }
 
         .checkbox-group {
@@ -281,16 +357,17 @@
         .extra-guest {
             background: #ffeef8;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
             margin-top: 15px;
             display: none;
+            border: 2px solid #f0d4e0;
         }
 
         .btn-submit {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            background: linear-gradient(135deg, #e89ec3 0%, #d685ac 100%);
             color: white;
             border: none;
-            padding: 15px 30px;
+            padding: 16px 35px;
             font-size: 1.2em;
             border-radius: 50px;
             cursor: pointer;
@@ -298,11 +375,12 @@
             margin-top: 20px;
             font-weight: bold;
             transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(232, 158, 195, 0.4);
         }
 
         .btn-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(17, 153, 142, 0.4);
+            box-shadow: 0 8px 25px rgba(232, 158, 195, 0.6);
         }
 
         .success-message {
@@ -310,7 +388,7 @@
             background: #d4edda;
             color: #155724;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
             margin-top: 20px;
             text-align: center;
             font-size: 1.1em;
@@ -335,7 +413,7 @@
             max-width: 90%;
             max-height: 90vh;
             border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(240, 147, 251, 0.6);
+            box-shadow: 0 20px 60px rgba(232, 158, 195, 0.6);
         }
 
         .close-photo {
@@ -345,104 +423,121 @@
             font-size: 40px;
             color: white;
             cursor: pointer;
-            background: rgba(118, 75, 162, 0.8);
-            width: 50px;
-            height: 50px;
+            background: rgba(232, 158, 195, 0.9);
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             border: none;
+            font-weight: bold;
         }
 
         @media (max-width: 600px) {
-            .container {
-                margin: 20px;
-                padding: 25px;
+            .invitation-card {
+                margin: 10px;
+                max-width: 100%;
             }
             
-            h1 {
-                font-size: 2em;
+            .name-title {
+                font-size: 2.5em;
             }
             
-            .age-highlight {
-                font-size: 3em;
+            .day-number {
+                font-size: 4em;
+            }
+            
+            .action-buttons {
+                gap: 20px;
+            }
+            
+            .btn-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8em;
+            }
+            
+            .btn-label {
+                font-size: 0.7em;
             }
         }
-
-        
     </style>
 </head>
 <body>
-    <!-- Borboletas -->
-    <div class="butterfly" style="top: 10%; left: 10%; animation-delay: 0s;">🦋</div>
-    <div class="butterfly" style="top: 20%; right: 15%; animation-delay: 2s;">🦋</div>
-    <div class="butterfly" style="top: 60%; left: 5%; animation-delay: 4s;">🦋</div>
-    <div class="butterfly" style="bottom: 20%; right: 10%; animation-delay: 6s;">🦋</div>
-    <div class="butterfly" style="top: 40%; left: 50%; animation-delay: 3s;">🦋</div>
+    <!-- Borboletas voando -->
+    <div class="butterfly" style="top: 8%; left: 12%; animation-delay: 0s;">🦋</div>
+    <div class="butterfly" style="top: 25%; right: 18%; animation-delay: 3s;">🦋</div>
+    <div class="butterfly" style="top: 65%; left: 8%; animation-delay: 6s;">🦋</div>
+    <div class="butterfly" style="bottom: 15%; right: 15%; animation-delay: 9s;">🦋</div>
 
-    <div class="container">
-        <!-- Flores decorativas -->
-        <div class="flower flower-1">🌸</div>
-        <div class="flower flower-2">🌺</div>
-        <div class="flower flower-3">🌻</div>
-        <div class="flower flower-4">🌷</div>
-
-        <div style="text-align: center; margin-bottom: 30px;">
-            <div style="width: 200px; height: 200px; margin: 0 auto 20px; border-radius: 50%; overflow: hidden; border: 5px solid #f093fb; box-shadow: 0 10px 30px rgba(240, 147, 251, 0.4); animation: photoFloat 3s ease-in-out infinite;">
-                <img id="heloisaPhoto" src="" alt="Heloísa" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;" onclick="openPhotoModal()">
+    <!-- Card do Convite -->
+    <div class="invitation-card">
+        <!-- Borboleta decorativa -->
+        <div class="corner-butterfly">🦋</div>
+        
+        <div class="card-content">
+            <!-- Foto da Heloísa -->
+            <div class="photo-frame" onclick="openPhotoModal()">
+                <img id="heloisaPhoto" src="/image/Heloisa-share.png" alt="Heloísa">
             </div>
-        </div>
-
-        <div style="text-align: center; color: #764ba2; font-size: 1.4em; margin-bottom: 20px; font-style: italic;">
-            ✨ Minha princesa está completando ✨
+            
+            <!-- Nome -->
+            <div class="name-title">Heloísa</div>
+            
+            <!-- Texto do convite -->
+            <div class="invite-text">
+                Minha princesa está completando<br>
+                2 aninhos
+            </div>
+            
+            <!-- Data -->
+            <div class="date-section">
+                <div class="month">DEZEMBRO</div>
+                <div class="day-time">
+                    <div style="text-align: right;">
+                        <div class="day-label">DOMINGO</div>
+                    </div>
+                    <div class="day-number">14</div>
+                    <div style="text-align: left;">
+                        <div class="time-label">ÀS</div>
+                        <div class="time-value">13:30</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Botões de ação -->
+            <div class="action-buttons">
+                <div class="action-btn" onclick="openModal()">
+                    <div class="btn-icon">✓</div>
+                    <div class="btn-label">CONFIRMAR<br>PRESENÇA</div>
+                </div>
+                <div class="action-btn" onclick="addToGoogleCalendar()">
+                    <div class="btn-icon">📅</div>
+                    <div class="btn-label">SALVAR<br>DATA</div>
+                </div>
+            </div>
+            
+            <!-- Versículo bíblico -->
+            <div style="margin-top: 25px; padding: 20px; background: rgba(232, 158, 195, 0.08); border-radius: 15px; border-left: 4px solid #e89ec3;">
+                <p style="color: #666; font-size: 0.95em; font-style: italic; line-height: 1.6; margin-bottom: 8px;">
+                    "Desde que nasci fui entregue a ti;<br>
+                    desde o ventre materno és o meu Deus."
+                </p>
+                <p style="color: #8b4458; font-weight: bold; text-align: right; font-size: 0.9em;">
+                    — Salmos 22:10
+                </p>
+            </div>
+            
+            <!-- Endereço -->
+            <div style="margin-top: 20px; color: #666; font-size: 0.9em;">
+                📍 Rua Antônio Bauschert, nº 81
+            </div>
         </div>
         
-        <div class="age-highlight">2 Aninhos! 🎂</div>
-        
-        <h1 style="color: #f093fb; font-size: 3em; margin: 20px 0;">Heloísa</h1>
-
-        <div class="info-section">
-            <div class="info-item">
-                <strong>📅 Quando:</strong>
-                <span>Domingo, 14 de Dezembro de 2025</span>
-            </div>
-            <div class="info-item">
-                <strong>🕐 Horário:</strong>
-                <span>13:30</span>
-            </div>
-            <div class="info-item">
-                <strong>📍 Onde:</strong>
-                <span>Rua Antônio Bauschert, nº 81</span>
-            </div>
-        </div>
-
-        <div style="background: rgba(255,255,255,0.7); padding: 20px; border-radius: 15px; margin: 25px 0; border-left: 5px solid #764ba2;">
-            <p style="color: #555; font-size: 1.1em; font-style: italic; line-height: 1.6; margin: 0;">
-                "Desde que nasci fui entregue a ti;<br>
-                desde o ventre materno és o meu Deus."
-            </p>
-            <p style="color: #764ba2; font-weight: bold; margin-top: 10px; text-align: right;">
-                — Salmos 22:10
-            </p>
-        </div>
-
-        <div style="text-align: center; color: #764ba2; font-size: 1.2em; margin: 25px 0;">
-            🌺 Venha comemorar este dia mágico com a gente! 🌺
-        </div>
-
-        <button class="btn-confirm" onclick="openModal()">
-            🦋 Confirmar Presença 🦋
-        </button>
-
-        <button class="btn-confirm" onclick="addToGoogleCalendar()" style="background: linear-gradient(135deg, #ea4335 0%, #fbbc04 100%); margin-top: 15px;">
-            📅 Adicionar no Google Agenda 📅
-        </button>
-        
-        <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #f093fb;">
-            <p style="color: #764ba2; font-size: 0.9em; font-style: italic;">
-                💜 Criado pelo titio dela 💜
-            </p>
+        <!-- Copyright -->
+        <div class="copyright">
+            💜 Criado pelo titio dela 💜
         </div>
     </div>
 
@@ -450,7 +545,7 @@
     <div class="modal" id="confirmModal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal()">&times;</button>
-            <h2 style="color: #764ba2; text-align: center; margin-bottom: 30px;">Confirme sua Presença</h2>
+            <h2>Confirme sua Presença</h2>
             
             <form id="confirmForm">
                 <div class="form-group">
@@ -474,7 +569,7 @@
                 </div>
 
                 <div class="extra-guest" id="extraGuestDiv">
-                    <h3 style="color: #764ba2; margin-bottom: 15px;">Dados do Acompanhante</h3>
+                    <h3 style="color: #8b4458; margin-bottom: 15px;">Dados do Acompanhante</h3>
                     <div class="form-group">
                         <label>Nome Completo do Acompanhante</label>
                         <input type="text" id="extraGuestName" placeholder="Digite o nome completo">
@@ -493,34 +588,19 @@
     <!-- Modal da Foto -->
     <div class="photo-modal" id="photoModal" onclick="closePhotoModal()">
         <button class="close-photo" onclick="closePhotoModal()">&times;</button>
-        <img id="photoModalImg" src="" alt="Heloísa">
+        <img id="photoModalImg" src="https://drive.google.com/uc?export=view&id=1Ks0vlhj3WF9iMssvmvk3-CSx56jfuVKS" alt="Heloísa">
     </div>
 
     <script>
-        // Carregar a foto da Heloísa
-        // Você pode substituir por uma URL online ou fazer upload da imagem
-        // Opções para adicionar a foto:
-        // 1. Hospedar no ImgBB (https://imgbb.com/) - gratuito
-        // 2. Hospedar no Imgur (https://imgur.com/)
-        // 3. Usar Google Drive (tornar público e pegar link direto)
-        // 4. Converter a imagem para Base64 e colar aqui
-        
-        // Por enquanto, coloque a URL da foto aqui:
-        const photoUrl = './Heloisa-share.jpg'; // Cole a foto em base64 aqui OU substitua por URL
-        
-        // Se preferir, você pode converter a foto para base64 em: https://base64.guru/converter/encode/image
-        // Depois cole o resultado completo na variável photoUrl acima
-        
-        document.getElementById('heloisaPhoto').src = photoUrl;
-        document.getElementById('photoModalImg').src = photoUrl;
         // Efeito de brilho ao mover o mouse
         document.addEventListener('mousemove', function(e) {
-            if (Math.random() > 0.8) {
+            if (Math.random() > 0.88) {
                 const sparkle = document.createElement('div');
                 sparkle.className = 'sparkle';
                 sparkle.style.left = e.pageX + 'px';
                 sparkle.style.top = e.pageY + 'px';
-                sparkle.style.background = `radial-gradient(circle, ${getRandomColor()}, transparent)`;
+                const colors = ['#fff', '#e89ec3', '#f0d4e0', '#ffd4e8'];
+                sparkle.style.background = `radial-gradient(circle, ${colors[Math.floor(Math.random() * colors.length)]}, transparent)`;
                 document.body.appendChild(sparkle);
                 
                 setTimeout(() => sparkle.remove(), 1000);
@@ -529,24 +609,20 @@
 
         // Efeito de brilho ao clicar
         document.addEventListener('click', function(e) {
-            for (let i = 0; i < 6; i++) {
+            for (let i = 0; i < 5; i++) {
                 setTimeout(() => {
                     const sparkle = document.createElement('div');
                     sparkle.className = 'sparkle';
-                    sparkle.style.left = (e.pageX + Math.random() * 40 - 20) + 'px';
-                    sparkle.style.top = (e.pageY + Math.random() * 40 - 20) + 'px';
-                    sparkle.style.background = `radial-gradient(circle, ${getRandomColor()}, transparent)`;
+                    sparkle.style.left = (e.pageX + Math.random() * 30 - 15) + 'px';
+                    sparkle.style.top = (e.pageY + Math.random() * 30 - 15) + 'px';
+                    const colors = ['#fff', '#e89ec3', '#f0d4e0', '#ffd4e8'];
+                    sparkle.style.background = `radial-gradient(circle, ${colors[Math.floor(Math.random() * colors.length)]}, transparent)`;
                     document.body.appendChild(sparkle);
                     
                     setTimeout(() => sparkle.remove(), 1000);
-                }, i * 50);
+                }, i * 40);
             }
         });
-
-        function getRandomColor() {
-            const colors = ['#fff', '#f093fb', '#667eea', '#764ba2', '#ffd700', '#ff69b4'];
-            return colors[Math.floor(Math.random() * colors.length)];
-        }
 
         function openModal() {
             document.getElementById('confirmModal').style.display = 'flex';
@@ -565,6 +641,26 @@
             extraDiv.style.display = checkbox.checked ? 'block' : 'none';
         }
 
+        function addToGoogleCalendar() {
+            const eventTitle = 'Aniversário Heloísa - 2 Anos 🎂';
+            const eventDetails = 'Festa de aniversário da Heloísa 🦋🌸';
+            const eventLocation = 'Rua Antônio Bauschert, nº 81';
+            const startDate = '20251214T133000';
+            const endDate = '20251214T183000';
+            
+            const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(eventLocation)}&dates=${startDate}/${endDate}`;
+            
+            window.open(googleCalendarUrl, '_blank');
+        }
+
+        function openPhotoModal() {
+            document.getElementById('photoModal').style.display = 'flex';
+        }
+
+        function closePhotoModal() {
+            document.getElementById('photoModal').style.display = 'none';
+        }
+
         document.getElementById('confirmForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -574,8 +670,8 @@
             const bringGuest = document.getElementById('bringGuest').checked;
             const extraGuestName = document.getElementById('extraGuestName').value;
 
-            // E-mail da sua irmã
-            const recipientEmail = 'nanaribeiro.2005@gmail.com'; // SUBSTITUA pelo e-mail real da sua irmã
+            // E-mail da sua irmã - SUBSTITUA AQUI
+            const recipientEmail = 'irma@email.com';
             
             // Construir mensagem para e-mail
             let emailBody = `CONFIRMAÇÃO DE PRESENÇA - Aniversário Heloísa%0D%0A%0D%0A`;
@@ -603,11 +699,11 @@
             whatsappMsg += `%0A📅 *Data:* 14/12/2025%0A`;
             whatsappMsg += `🕐 *Horário:* 13:30`;
 
-            // Abrir e-mail com mailto
+            // Abrir e-mail
             window.open(`mailto:${recipientEmail}?subject=Confirmação - Aniversário Heloísa&body=${emailBody}`, '_blank');
             
-            // Copiar mensagem do WhatsApp para clipboard (opcional)
-            const whatsappNumber = '5511976715523'; // SUBSTITUA pelo WhatsApp da sua irmã
+            // Abrir WhatsApp - SUBSTITUA O NÚMERO AQUI
+            const whatsappNumber = '5511999999999';
             window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMsg}`, '_blank');
 
             // Mostrar mensagem de sucesso
@@ -619,28 +715,6 @@
                 document.getElementById('confirmForm').style.display = 'block';
             }, 3000);
         });
-
-        // Função para adicionar ao Google Agenda
-        function addToGoogleCalendar() {
-            const eventTitle = 'Aniversário Heloísa - 2 Anos 🎂';
-            const eventDetails = 'Festa de aniversário da Heloísa - Tema: Jardim Encantado 🦋🌺';
-            const eventLocation = 'Rua Antônio Bauschert, nº 81';
-            const startDate = '20251214T133000'; // 14/12/2025 às 13:30
-            const endDate = '20251214T183000'; // Até 18:30 (5 horas de festa)
-            
-            const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(eventLocation)}&dates=${startDate}/${endDate}`;
-            
-            window.open(googleCalendarUrl, '_blank');
-        }
-
-        // Funções do modal da foto
-        function openPhotoModal() {
-            document.getElementById('photoModal').style.display = 'flex';
-        }
-
-        function closePhotoModal() {
-            document.getElementById('photoModal').style.display = 'none';
-        }
     </script>
 </body>
 </html>
